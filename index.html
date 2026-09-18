@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Рабочий журнал">
+  <title>Worklog</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Iosevka+Charon+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="./">WORKLOG<span>/</span></a>
+    <div class="topbar-right">
+      <span id="repo-label" class="repo-label">loading…</span>
+      <a id="github-link" class="icon-link" target="_blank" rel="noopener" aria-label="Open repository">↗</a>
+    </div>
+  </header>
+
+  <main class="layout">
+    <aside class="sidebar">
+      <div class="sidebar-title">ДНЕВНИК</div>
+      <div id="date-list" class="date-list"></div>
+    </aside>
+
+    <section class="content">
+      <div id="status" class="status">Загрузка…</div>
+      <article id="note" class="note hidden"></article>
+    </section>
+  </main>
+
+  <template id="date-item-template">
+    <a class="date-item" href="#">
+      <span class="date-main"></span>
+      <span class="date-weekday"></span>
+    </a>
+  </template>
+
+  <script src="https://cdn.jsdelivr.net/npm/marked@15.0.7/marked.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/dompurify@3.2.6/dist/purify.min.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
