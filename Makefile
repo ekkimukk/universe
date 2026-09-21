@@ -3,8 +3,9 @@ SHELL := /bin/bash
 NOTES_DIR := notes
 TODAY := $(shell date +%Y-%m-%d)
 TODAY_FILE := $(NOTES_DIR)/$(TODAY).md
+OBSIDIAN_DIR := /home/eg/miscellanea/obsidian/fyrirPekkingu/Work (Universe Data)/journal
 
-.PHONY: today new open list clean
+.PHONY: today new open list clean cp
 
 # Создать дневник на сегодня
 today:
@@ -49,3 +50,11 @@ list:
 # Удалить временные файлы редактора
 clean:
 	@find $(NOTES_DIR) -type f \( -name '*~' -o -name '*.swp' \) -delete
+
+cp:
+	@cp "$(OBSIDIAN_DIR)"/* "$(NOTES_DIR)"
+
+commit-push:
+	git add .
+	git commit -m '✎﹏﹏﹏﹏'
+	git push
